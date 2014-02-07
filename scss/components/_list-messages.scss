@@ -1,0 +1,89 @@
+.list-messages { margin: 0; }
+
+.list-message {
+  margin-left: 0;
+  padding: 8px 70px 8px 10px;
+  line-height: 16px;
+
+  &:active { background: #eee; }
+}
+
+.list-message-img {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  background: #5ac15b;
+  border-radius: 25px;
+  @include linear-gradient(top left, #5ac15b 50%, #56b459 51%);
+
+  > img {
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+}
+
+.list-messsage-title {
+  margin-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 500; // Helvetica Neue only
+  text-overflow: ellipsis;
+
+  &:after {
+    content: $iconRight;
+    top: auto;
+    bottom: 6px;
+    right: 3px;
+    font-size: 32px;
+    color: #bbb;
+    @extend %icon-before;
+  }
+}
+
+.list-message-date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 13px;
+  color: $linkColor;
+}
+
+.list-message-count {
+  position: absolute;
+  bottom: 12px;
+  right: 32px;
+  padding: 1px 5px;
+  font-size: 13px;
+  color: white;
+  background: $linkColor;
+  border-radius: 2px;
+
+  &.important {
+    min-width: 8px;
+    background: $red;
+    border-radius: 9px;
+  }
+}
+
+.list-message-desc {
+  overflow: hidden;
+  height: 32px;
+  font-size: 13px;
+  color: $textColorLight;
+}
+
+.list-message-small {
+  > .list-message-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+  }
+
+  > .list-messsage-title {
+    margin-bottom: 0;
+    line-height: 25px;
+  }
+}

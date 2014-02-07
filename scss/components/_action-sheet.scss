@@ -1,0 +1,123 @@
+.action-sheet {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* This is just in case you're leaving the markup in the DOM while the sheet
+     isn't activated. I recommend removing the markup instead. */
+  pointer-events: none;
+
+  &, > .action-sheet-content { @include transition($transition); }
+
+  &.in {
+    background: rgba(black, .35);
+    pointer-events: auto;
+
+    > .action-sheet-content { bottom: 0; }
+  }
+}
+
+.action-sheet-content {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  max-height: 80%;
+  padding: 12px 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  @include linear-gradient(top, rgba(white, .95), rgba(#e7f0f5, .95));
+
+  > h3 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500; // Helvetica Neue only
+  }
+
+  > p { font-size: 14px; }
+}
+
+.action-sheet-button {
+  display: block;
+  margin: 0 -15px;
+  line-height: 48px;
+  font-size: 18px;
+  text-align: center;
+  background: rgba(black, .05);
+
+  &:last-child { margin-bottom: -12px; }
+}
+
+.action-sheet-button-blue {
+  color: white;
+  background: $linkColor;
+}
+
+.action-sheet-icons {
+  height: 87px;
+  margin: 15px -15px 0;
+  padding: 15px 15px 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #aab1b5;
+  -webkit-overflow-scrolling: touch;
+}
+
+.action-sheet-icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  white-space: normal;
+
+  & + & { margin-left: 15px; }
+}
+
+.action-sheet-icon-link {
+  position: relative;
+  display: block;
+  padding-top: 65px;
+  line-height: 1;
+  font-size: 11px;
+  color: $textColor;
+  text-align: center;
+
+  &:before, &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    line-height: 60px;
+    font-size: 32px;
+    color: #8e969b;
+    @extend %icon;
+  }
+
+  &:after {
+    content: '';
+    height: 58px;
+    border: 1px solid #aab1b5;
+    border-radius: 10px;
+  }
+
+  &.icon-camera:before {
+    content: $iconCamera;
+    margin-top: -2px;
+  }
+
+  &.icon-message:before {
+    content: $iconMessage;
+    margin-top: -4px;
+  }
+
+  &.icon-cloud-up:before { content: $iconCloudUp; }
+  &.icon-link:before { content: $iconLink; }
+  &.icon-pen:before { content: $iconPen; }
+  &.icon-trash:before { content: $iconTrash; }
+}

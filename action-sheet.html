@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Clarity UI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/demo.css">
+</head>
+<body ontouchstart="">
+<div class="demo"><!-- for demo purposes only -->
+
+  <div class="app">
+    <div class="top-bar">
+      <h1 class="top-bar-title">Clarity</h1>
+      <a href="menu-1.html" class="top-bar-link left icon-only icon-menu">Menu</a>
+      <a href="index.html" class="top-bar-link right icon-only icon-plus">New</a>
+    </div>
+    <nav class="bottom-bar bottom-bar-five">
+      <a href="index.html" class="bottom-bar-link icon-home active">Home</a>
+      <a href="menu-1.html" class="bottom-bar-link icon-menu">Menu</a>
+      <a href="form-1.html" class="bottom-bar-link icon-folder">Forms</a>
+      <a href="list-1.html" class="bottom-bar-link icon-list">Lists</a>
+      <a href="alt.html" class="bottom-bar-link icon-alt">Alt</a>
+    </nav>
+    <div class="content">
+      <form class="search-bar">
+        <input type="search" class="search-bar-input" placeholder="Search">
+      </form>
+      <section class="text-block">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit… <a href="index.html">More</a></p>
+        <p>
+          <a href="index.html" class="button button-small">Install</a>
+          <button class="button button-small button-green">Submit</button>
+          <input type="submit" value="Delete" class="button button-small button-red">
+        </p>
+        <p>
+          <span class="tag">iOS</span> <span class="tag active">Mobile</span>
+          <span class="tag tag-small">CSS</span> <span class="tag tag-small active">UI Kit</span>
+        </p>
+        <nav class="tabs tabs-gray tabs-three">
+          <a href="index.html" class="tabs-link">Tab 1</a>
+          <a href="index.html" class="tabs-link active">Tab 2</a>
+          <a href="index.html" class="tabs-link">Tab 3 <span class="tabs-counter">1</span></a>
+        </nav>
+      </section>
+      <ul class="list">
+        <li class="list-row">
+          <a href="action-sheet.html" class="list-link icon-right">Action Sheet</a>
+        </li>
+        <li class="list-row">
+          <a href="alert.html" class="list-link icon-right">Alert</a>
+        </li>
+      </ul>
+      <ul class="pagination">
+        <li class="pagination-item">
+          <a href="index.html" class="pagination-link">Page 1</a>
+        </li><li class="pagination-item">
+          <a href="index.html" class="pagination-link active">Page 2</a>
+        </li><li class="pagination-item">
+          <a href="index.html" class="pagination-link">Page 3</a>
+        </li>
+      </ul>
+    </div>
+
+    <script>document.write('<div class="js">'); // demo only </script>
+    <!-- The action sheet is activated by toggling the "in" class. -->
+    <div class="action-sheet in">
+      <div class="action-sheet-content">
+        <h3>Action Sheet</h3>
+        <p>Repellat, quibusdam, ab illo est explicabo placeat aliquid odio maxime. Non, soluta.</p>
+        <ul class="action-sheet-icons">
+          <!-- Note: there must be no whitespace between the <li> elements. -->
+          <li class="action-sheet-icon">
+            <a href="index.html" class="action-sheet-icon-link icon-pen">Edit</a>
+          </li><li class="action-sheet-icon">
+            <a href="index.html" class="action-sheet-icon-link icon-cloud-up">Upload to Cloud</a>
+          </li><li class="action-sheet-icon">
+            <a href="index.html" class="action-sheet-icon-link icon-camera">Save to Camera</a>
+          </li><li class="action-sheet-icon">
+            <a href="index.html" class="action-sheet-icon-link icon-message">Share via Email</a>
+          </li><li class="action-sheet-icon">
+            <a href="index.html" class="action-sheet-icon-link icon-link">Copy Link</a>
+          </li><li class="action-sheet-icon">
+            <a href="index.html" class="action-sheet-icon-link icon-trash">Delete</a>
+          </li>
+        </ul>
+        <a href="index.html" class="action-sheet-button action-sheet-button-blue">Accept</a>
+        <a href="index.html" class="action-sheet-button">Cancel</a>
+      </div>
+    </div>
+    <script>document.write('</div>'); // demo only </script>
+  </div>
+
+</div>
+<p class="demo-thanks">
+  Development funded by <a href="http://calendee.com/">Calendee LLC</a> for their mobile app
+  <a href="http://www.kidsintouch.com/">Kids In Touch</a>.
+</p>
+<script>
+  // demo only
+  var js = document.getElementsByClassName('js')[0],
+      el = document.getElementsByClassName('in')[0];
+
+  el.className = el.className.replace(' in', '');
+
+  setTimeout(function() {
+    js.className = '';
+    js.offsetWidth;
+    el.className += ' in';
+  }, 200);
+</script>
+</body>
+</html>

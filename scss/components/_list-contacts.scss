@@ -1,0 +1,14 @@
+.list-contacts-title {
+  margin: 0;
+  line-height: 24px;
+  font-size: inherit;
+  color: $textColor;
+  background: $rowBackgroundAlt;
+  border-width: 1px 0;
+  box-shadow: none;
+  @extend .list-title-row;
+
+  &:first-child { border-top-width: 0; }
+}
+
+.list-contacts { margin: 0; }

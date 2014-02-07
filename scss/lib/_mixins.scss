@@ -1,0 +1,59 @@
+@mixin box-sizing($val) {
+  -webkit-box-sizing: $val;
+     -moz-box-sizing: $val;
+          box-sizing: $val;
+}
+
+@mixin user-select($val...) {
+  -webkit-user-select: $val;
+     -moz-user-select: $val;
+      -ms-user-select: $val;
+          user-select: $val;
+}
+
+@function inverse-side($side) {
+  @if      $side == top    { @return bottom; }
+  @else if $side == bottom { @return top; }
+  @else if $side == left   { @return right; }
+  @else if $side == right  { @return left; }
+}
+
+@mixin linear-gradient($gradientLine, $colorStops...) {
+  background-image: -webkit-linear-gradient($gradientLine, $colorStops);
+  background-image:    -moz-linear-gradient($gradientLine, $colorStops);
+  background-image:      -o-linear-gradient($gradientLine, $colorStops);
+  @if length($gradientLine) == 2 {
+  background-image:         linear-gradient(to #{inverse-side(nth($gradientLine, 1))} #{inverse-side(nth($gradientLine, 2))}, $colorStops);
+  } @else {
+  background-image:         linear-gradient(to #{inverse-side($gradientLine)}, $colorStops);
+  }
+}
+
+@mixin radial-gradient($gradient...) {
+  background-image: -webkit-radial-gradient($gradient);
+  background-image:    -moz-radial-gradient($gradient);
+  background-image:      -o-radial-gradient($gradient);
+  background-image:         radial-gradient($gradient);
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin transition-property($property...) {
+  -webkit-transition-property: $property;
+     -moz-transition-property: $property;
+       -o-transition-property: $property;
+          transition-property: $property;
+}
+
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+       -o-transform: $transform;
+          transform: $transform;
+}

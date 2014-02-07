@@ -1,0 +1,66 @@
+.bottom-bar {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  line-height: 48px;
+  background: $bottomBarBackground;
+  border-top: 1px solid #c8c8c8;
+
+  ~ .content { border-bottom: 49px solid transparent; }
+}
+
+.bottom-bar-link {
+  position: relative;
+  float: left;
+  padding-top: 30px;
+  line-height: 18px;
+  font-size: 11px;
+  color: $textColorLight;
+  text-align: center;
+
+  &.active { color: $linkColor; }
+
+  .bottom-bar-two > & { width: 50%; }
+  .bottom-bar-three > & { width: 33%; }
+  .bottom-bar-three > &:nth-child(2) { width: 34%; }
+  .bottom-bar-four > & { width: 25%; }
+  .bottom-bar-five > & { width: 20%; }
+
+  &:before {
+    left: 0;
+    right: 0;
+    margin-top: -19px;
+    font-size: 24px;
+    @extend %icon-before;
+  }
+
+  &.icon-folder:before { content: $iconFolder; margin-top: -20px; }
+  &.icon-home:before { content: $iconHome; margin-top: -20px; }
+  &.icon-list:before { content: $iconList; }
+  &.icon-menu:before { content: $iconMenu; }
+  &.icon-alt:before { content: $iconAlt; }
+}
+
+.bottom-bar-counter {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  right: 50%;
+  margin-right: -32px;
+  padding: 0 4px;
+  line-height: 17px;
+  font-size: 13px;
+  color: white;
+  background: $linkColor;
+  border-radius: 2px;
+
+  &.important {
+    min-width: 9px;
+    background: $red;
+    border-radius: 9px;
+    @include linear-gradient(top, lighten($red, 4%), darken($red, 6%));
+  }
+}

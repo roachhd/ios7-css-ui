@@ -1,0 +1,27 @@
+.list-numbered {
+  counter-reset: li;
+
+  > .list-row {
+    margin-left: 34px;
+
+    &:before {
+      content: counter(li)'.';
+      counter-increment: li;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 100%;
+      margin-right: 8px;
+      line-height: 40px;
+      color: $textColorLight;
+    }
+
+    &.checking:after { margin-right: 34px; }
+    &:active:before { color: white; }
+  }
+
+  .list-link {
+    margin-left: -34px;
+    padding-left: 34px;
+  }
+}

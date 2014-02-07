@@ -1,0 +1,22 @@
+.tag {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 4px;
+  padding: 0 12px;
+  line-height: 30px;
+  color: #222;
+  font-size: 15px;
+  background: #d5e4f7;
+  border-radius: 16px;
+
+  &.active {
+    color: white;
+    background: $activeColor;
+  }
+}
+
+.tag-small {
+  padding: 0 9px;
+  line-height: 24px;
+  font-size: 14px;
+}

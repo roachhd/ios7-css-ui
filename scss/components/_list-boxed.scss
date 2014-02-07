@@ -1,0 +1,35 @@
+.list-boxed {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 2px;
+  overflow: visible;
+  background: $contentBackground;
+  border: 0;
+  box-shadow: none;
+
+  > .list-row {
+    margin-left: 0;
+
+    + .list-row {
+      border: 0;
+      margin-top: 8px;
+    }
+  }
+
+  .list-link {
+    margin-left: 0;
+    background: $rowBackground;
+    border-left: 2px solid $activeColor;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 0 1px rgba(black, .06),
+                0 1px 1px rgba(black, .07);
+
+    &.green { border-color: $green; }
+    &.red { border-color: $red; }
+
+    &:active {
+      background: $activeColor;
+      border-color: $activeColor;
+    }
+  }
+}

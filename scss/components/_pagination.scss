@@ -1,0 +1,27 @@
+.pagination { text-align: center; }
+
+.pagination-item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pagination-link {
+  display: block;
+  padding: 4px;
+  width: 6px;
+  height: 6px;
+  @extend %hide-text;
+
+  &:before {
+    content: '';
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: 3px;
+    background: #a7a7aa;
+    box-shadow: inset 0 0 0 1px rgba(white, .1),
+                0 0 0 1px rgba(white, .3);
+  }
+
+  &.active:before { background: black; }
+}

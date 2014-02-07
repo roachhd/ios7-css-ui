@@ -1,0 +1,13 @@
+%border-box {
+  @include box-sizing(border-box);
+}
+
+%user-select-none {
+  @include user-select(none);
+}
+
+%hide-text {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent !important;
+}

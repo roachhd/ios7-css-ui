@@ -1,0 +1,108 @@
+.list-title {
+  margin: 18px 0 5px;
+  padding: 0 12px;
+  line-height: 24px;
+  font-size: 14px;
+  color: $textColorLight;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(white, .2);
+}
+
+.list-title-row {
+  position: relative;
+  padding: 0 12px;
+  line-height: 27px;
+  font-size: 15px;
+  font-weight: 500; // Helvetica Neue only
+  background: $rowBackgroundAlt;
+  border: 1px solid $rowBorder;
+  border-width: 0 0 1px;
+  box-shadow: 0 -1px rgba(black, .08);
+}
+
+.list {
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 1px;
+  background: $rowBackground;
+  box-shadow: 0 -1px rgba(black, .08),
+              0 1px rgba(black, .07),
+              0 1px 1px rgba(black, .05);
+}
+
+.list-row {
+  position: relative;
+  margin-left: 12px;
+  line-height: 20px;
+
+  & + & { border-top: 1px solid $rowBorder; }
+
+  &:after {
+    position: absolute;
+    z-index: 2;
+    top: -1px;
+    bottom: -1px;
+    width: 42px;
+    line-height: 42px;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    @extend %icon;
+  }
+
+  &.deleting {
+    &:after {
+      content: $iconDelete;
+      right: 0;
+      line-height: 40px;
+      background: $red;
+    }
+  }
+
+  &.checking {
+    right: -42px;
+
+    &:after {
+      content: $iconCheck;
+      right: 100%;
+      margin-right: 12px;
+      background: $green;
+    }
+  }
+}
+
+.list-link {
+  display: block;
+  position: relative;
+  margin-left: -12px;
+  padding: 10px 12px;
+  color: $textColor;
+
+  &:active {
+    z-index: 1;
+    color: white;
+    background: $activeColor;
+    box-shadow: 0 1px $activeColor,
+                0 -1px $activeColor;
+
+    &:after { color: inherit; }
+  }
+
+  &:after {
+    right: 6px;
+    font-size: 28px;
+    color: #bbb;
+    @extend %icon-before;
+  }
+
+  &.icon-right:after { content: $iconRight; }
+  &.icon-move:after { content: $iconMove; }
+}
+
+.list-val {
+  float: right;
+  color: $textColorLight;
+  margin: 0 24px 0 8px;
+
+  .list-link:active > & { color: inherit; }
+}

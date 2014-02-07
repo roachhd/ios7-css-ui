@@ -1,0 +1,19 @@
+.top-bar-sub {
+  position: absolute;
+  z-index: 5;
+  top: 43px;
+  left: 0;
+  right: 0;
+  height: 39px;
+  background: $topBarBackground;
+  border-top: 1px solid $topBarBackground;
+  border-bottom: 1px solid #c8c8c8;
+  box-shadow: 0 1px 1px rgba(black, .04);
+
+  ~ .content { border-top: 84px solid transparent; }
+
+  &.tabs {
+    height: 39px;
+    padding: 0 10px;
+  }
+}

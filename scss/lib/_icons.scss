@@ -1,0 +1,68 @@
+/*
+ * Icons by Elegant Themes, Inc. (c) 2013
+ * Licensed under the MIT License
+ */
+
+@font-face {
+  font-family: 'elegant-icons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/elegant-icons.woff') format('woff'),
+       url('../fonts/elegant-icons.ttf')  format('truetype');
+}
+
+%icon {
+  font-family: 'elegant-icons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1;
+  /* Improve rendering on Mac OS X. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%icon-before {
+  position: absolute;
+  top: 50%;
+  margin-top: -.5em;
+  text-align: center;
+  @extend %icon;
+}
+
+$iconAlt: '\e00a';
+$iconBack: '\34';
+$iconCamera: '\e00f';
+$iconCloudUp: '\e003';
+$iconCog: '\e038';
+$iconCheck: '\4e';
+$iconDelete: '\4d';
+$iconDown: '\33';
+$iconDropdown: '\33';
+$iconFiles: '\69';
+$iconFolder: '\6d';
+$iconGroup: '\e08c';
+$iconHome: '\e009';
+$iconInbox: '\e020';
+$iconInvalid: '\72';
+$iconLink: '\e016';
+$iconList: '\62';
+$iconMenu: '\e01f';
+$iconMenuCircle: '\63';
+$iconMessage: '\e010';
+$iconMove: '\61';
+$iconNext: '\35';
+$iconPen: '\6a';
+$iconPlusCircle: '\50';
+$iconRight: '\35';
+$iconSearch: '\55';
+$iconTask: '\5a';
+$iconTrash: '\e019';
+$iconUp: '\32';
+$iconValid: '\52';
+
+$iconPinterest: '\e0ac';
+$iconFacebook: '\e0aa';
+$iconGoogle: '\e0ad';
+$iconTwitter: '\e0ab';

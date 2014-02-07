@@ -1,0 +1,21 @@
+.bottom-bar-dark {
+  text-shadow: 0 1px rgba(black, .1);
+  background: $bottomBarBackgroundDark;
+  border-color: $bottomBarBackgroundDark;
+  @include linear-gradient(top, lighten($bottomBarBackgroundDark, 5%), darken($bottomBarBackgroundDark, 5%));
+
+  .bottom-bar-link {
+    color: rgba(white, .8);
+
+    &.active {
+      color: white;
+      background: rgba(white, .1);
+      box-shadow: inset 0 1px 1px rgba(black, .1),
+                  1px 0 rgba(black, .15),
+                  -1px 0 rgba(black, .15);
+      @include linear-gradient(top, darken($bottomBarBackgroundDark, 5%), lighten($bottomBarBackgroundDark, 5%));
+    }
+  }
+
+  .bottom-bar-counter { box-shadow: 0 0 0 1px rgba(black, .1); }
+}

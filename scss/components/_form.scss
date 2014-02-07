@@ -1,0 +1,90 @@
+input, textarea, select, button, label {
+  display: inline-block;
+  vertical-align: top;
+  /* Remove the default gray highlight. */
+  -webkit-tap-highlight-color: rgba(black, 0);
+  /* Improve font rendering on desktop browsers. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @extend %border-box;
+}
+
+input, textarea, select, button {
+  margin: 0;
+  padding: 0;
+  font-family: $fontFamily;
+  font-size: 16px;
+  background: white;
+  border: 0;
+  border-radius: 0;
+
+  &:focus { outline: 0; }
+}
+
+label { @extend %user-select-none; }
+
+textarea { resize: none; }
+
+input[type="search"],
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-ms-clear { display: none; }
+
+::-webkit-input-placeholder { color: $placeholderColor; }
+:-ms-input-placeholder { color: $placeholderColor; }
+::-moz-placeholder {
+  color: $placeholderColor;
+  opacity: 1;
+}
+
+::-moz-focus-inner {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.form-title {
+  margin: 18px 0 4px;
+  padding: 0 12px;
+  line-height: 24px;
+  font-size: 14px;
+  color: $textColorLight;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(white, .2);
+}
+
+.form-title-row {
+  position: relative;
+  padding: 0 12px;
+  line-height: 27px;
+  font-size: 15px;
+  font-weight: 500; // Helvetica Neue only
+  background: $rowBackgroundAlt;
+  border-bottom: 1px solid $rowBorder;
+  box-shadow: 0 -1px rgba(black, .08);
+}
+
+.form-row {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  line-height: 42px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @extend %border-box;
+
+  & + & { border-top: 1px solid $rowBorder; }
+}
+
+fieldset {
+  margin-bottom: 20px;
+  padding-left: 12px;
+  background: $rowBackground;
+  box-shadow: 0 -1px rgba(black, .08),
+              0 1px rgba(black, .07),
+              0 1px 1px rgba(black, .05);
+
+  &:last-child { margin-bottom: 0; }
+}

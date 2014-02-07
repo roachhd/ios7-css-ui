@@ -1,0 +1,72 @@
+.tabs {
+  height: 29px;
+  line-height: 27px;
+  text-align: center;
+}
+
+.tabs-link {
+  position: relative;
+  float: left;
+  font-size: 13px;
+  border: 1px solid $linkColor;
+  border-right-width: 0;
+  @extend %border-box;
+
+  &:first-child { border-radius: 4px 0 0 4px; }
+  &:last-child {
+    border-right-width: 1px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .tabs-two > & { width: 50%; }
+  .tabs-three > & { width: 33%; }
+  .tabs-three > &:nth-child(2) { width: 34%; }
+  .tabs-four > & { width: 25%; }
+
+  &.active {
+    z-index: 1;
+    color: white;
+    background: $linkColor;
+    border-color: rgba(black, .05);
+    box-shadow: 1px 0 rgba(black, .05);
+
+    &:last-child { box-shadow: none; }
+  }
+}
+
+.tabs-inline {
+  > .tabs-link {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 12px;
+  }
+}
+
+.tabs-gray {
+  > .tabs-link {
+    color: #7c7b83;
+    border-color: #7c7b83;
+  }
+
+  > .active {
+    color: white;
+    background: #7c7b83;
+    border-color: rgba(black, .05);
+  }
+}
+
+.tabs-counter {
+  position: absolute;
+  z-index: 2;
+  top: -6px;
+  right: -6px;
+  min-width: 9px;
+  padding: 0 4px;
+  line-height: 17px;
+  font-size: 13px;
+  color: white;
+  background: $red;
+  border-radius: 9px;
+  @include linear-gradient(top, lighten($red, 4%), darken($red, 6%));
+}

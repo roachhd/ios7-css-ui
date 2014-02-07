@@ -1,0 +1,39 @@
+.switch {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.switch-input { display: none; }
+
+.switch-label {
+  display: block;
+  width: 56px;
+  height: 28px;
+  background: #fafafa;
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 1px #e5e5e5;
+  /* The "left" property is inherited by the pseudo-element
+     which allows it to be transitioned in all browsers. */
+  left: 1px;
+  @include transition(left .2s ease-out);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: inherit;
+    width: 26px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0 2px 5px rgba(black, .2),
+                0 0 2px rgba(black, .2);
+  }
+
+  .switch-input:checked + & {
+    background: $green;
+    box-shadow: none;
+    left: 29px;
+  }
+}

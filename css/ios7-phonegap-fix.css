@@ -1,0 +1,14 @@
+.app {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 -20px #f8f8f8; }
+  .app > .bottom-bar {
+    bottom: 20px; }
+  .menu.in + .app {
+    margin-top: 0;
+    padding-bottom: 0; }
+    .menu.in + .app > .bottom-bar {
+      bottom: 0; }
+
+/* Un-comment this if you want the status bar to be black. */
+/* .app { box-shadow: 0 -20px black; }                     */

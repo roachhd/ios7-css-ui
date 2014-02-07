@@ -1,0 +1,38 @@
+.form-option-input {
+  position: absolute;
+  left: 0;
+}
+
+.form-option-label {
+  position: relative;
+  display: block;
+  padding-left: 32px;
+  background: white;
+
+  &:before {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    font-size: 24px;
+    color: $activeColor;
+    @extend %icon;
+  }
+
+  .form-option-input:checked + & {
+    font-weight: 500; // Helvetica Neue only
+    color: $activeColor;
+
+    &:before { content: $iconCheck; }
+  }
+}
+
+.form-option-alt {
+  > .form-option-label {
+    padding: 0 42px 0 0;
+
+    &:before {
+      left: auto;
+      right: 12px;
+    }
+  }
+}

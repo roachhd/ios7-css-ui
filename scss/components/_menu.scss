@@ -1,0 +1,63 @@
+.menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: #64a4e1;
+  @include linear-gradient(top left, #64a4e1, #2ccd8a);
+
+  ~ .app {
+    @include transition($transition);
+    @include transition-property(margin, transform);
+  }
+
+  &.in {
+    ~ .app {
+      margin-left: 20%;
+      border-radius: 3px 0 0 3px;
+      box-shadow: 0 0 4px rgba(black, .4);
+      @include transform(scale(.8));
+
+      > .top-bar { border-top-left-radius: 3px; }
+      > .bottom-bar { border-bottom-left-radius: 3px; }
+    }
+  }
+}
+
+.menu-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 30%;
+  /* The top margin must be equal to 50% of the menu's height. */
+  margin-top: -163px;
+}
+
+.menu-nav-link {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  padding: 48px 0 2px;
+  line-height: 24px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+
+  &.active { background: rgba(white, .2); }
+
+  &:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    font-size: 32px;
+    @extend %icon;
+  }
+
+  &.icon-cog:before { content: $iconCog; }
+  &.icon-files:before { content: $iconFiles; }
+  &.icon-inbox:before { content: $iconInbox; }
+  &.icon-task:before { content: $iconTask; }
+}

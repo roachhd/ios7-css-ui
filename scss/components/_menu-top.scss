@@ -1,0 +1,62 @@
+.menu-top {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: #42c0ee;
+  @include radial-gradient(top left, cover, #42c0ee, #6e5dc9);
+
+  ~ .app {
+    @include transition($transition);
+    @include transition-property(margin, transform);
+  }
+
+  &.in {
+    ~ .app {
+      margin-top: 50%;
+      box-shadow: 0 0 5px rgba(black, .4), 0 0 0 1px rgba(black, .1);
+      @include transform(scale(.8));
+
+      &, > .top-bar { border-radius: 3px 3px 0 0; }
+    }
+  }
+}
+
+.menu-top-title {
+  margin: 15px 0 10px;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 500; // Helvetica Neue only
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(black, .1);
+}
+
+.menu-top-list {
+  overflow: hidden;
+  height: 100%;
+}
+
+.menu-top-list-item {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 20%;
+  @extend %hide-text;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 48px;
+    color: rgba(white, .95);
+    text-shadow: 0 1px 3px rgba(black, .1);
+    @extend %icon-before;
+  }
+
+  &.icon-facebook:before { content: $iconFacebook; }
+  &.icon-google:before { content: $iconGoogle; }
+  &.icon-pinterest:before { content: $iconPinterest; }
+  &.icon-twitter:before { content: $iconTwitter; }
+}

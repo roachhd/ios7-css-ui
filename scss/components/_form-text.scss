@@ -1,0 +1,53 @@
+.form-text-row {
+  overflow: visible;
+
+  > .form-hint { margin-top: -4px; }
+ }
+
+/* By default labels have a flexible width. */
+
+.form-text-label {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 30%;
+  line-height: 42px;
+  padding-right: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: $textColorLight;
+  text-overflow: ellipsis;
+  @extend %border-box;
+
+  + .form-text-input { max-width: 70%; }
+}
+
+.form-text-label.width-20 { width: 20%; }
+.width-20 + .form-text-input { width: 80%; max-width: none; }
+.width-20 ~ .form-hint { margin-left: 20%; }
+
+.form-text-label.width-30 { width: 30%; }
+.width-30 + .form-text-input { width: 70%; }
+.width-30 ~ .form-hint { margin-left: 30%; }
+
+.form-text-label.width-40 { width: 40%; max-width: none; }
+.width-40 + .form-text-input { width: 60%; }
+.width-40 ~ .form-hint { margin-left: 40%; }
+
+.form-text-label.width-50 { width: 50%; max-width: none; }
+.width-50 + .form-text-input { width: 50%; }
+.width-50 ~ .form-hint { margin-left: 50%; }
+
+.form-text-label-black { color: $textColor; }
+
+.form-text-input {
+  width: 100%;
+  height: 42px;
+  padding-right: 12px;
+}
+
+.form-text-textarea {
+  width: 100%;
+  height: 82px;
+  line-height: 22px;
+  padding: 8px 12px 8px 0;
+}

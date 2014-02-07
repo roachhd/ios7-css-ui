@@ -1,0 +1,11 @@
+.form-hint {
+  display: block;
+  line-height: 24px;
+  padding-bottom: 8px;
+  white-space: normal;
+  font-size: 14px;
+  color: $textColorLight;
+
+  .form-row + & { border-bottom: 1px solid $rowBorder; }
+  .form-row + &:last-child { border-bottom: 0; }
+}

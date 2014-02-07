@@ -1,0 +1,22 @@
+.top-bar-dark {
+  color: white;
+  text-shadow: 0 1px rgba(black, .1);
+  background: $topBarBackgroundDark;
+  border-color: darken($topBarBackgroundDark, 10%);
+  @include linear-gradient(top, lighten($topBarBackgroundDark, 3%), saturate(darken($topBarBackgroundDark, 5%), 5%));
+
+  > .top-bar-link, > .top-bar-link:before { color: white; }
+
+  .tabs-link {
+    color: darken($topBarBackgroundDark, 30%);
+    background: none;
+    border-color: darken($topBarBackgroundDark, 20%);
+    box-shadow: none;
+
+    &.active {
+      background: darken($topBarBackgroundDark, 20%);
+      border-color: darken($topBarBackgroundDark, 20%);
+      box-shadow: none;
+    }
+  }
+}

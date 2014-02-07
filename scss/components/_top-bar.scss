@@ -1,0 +1,100 @@
+.top-bar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 43px;
+  line-height: 43px;
+  font-size: 18px;
+  background: $topBarBackground;
+  border-bottom: 1px solid #c8c8c8;
+  box-shadow: 0 1px 1px rgba(black, .04);
+
+  ~ .content { border-top: 44px solid transparent; }
+
+  > .tabs {
+    margin-top: 7px;
+    padding: 0 7px;
+  }
+
+  > .left { float: left; }
+  > .right { float: right; }
+}
+
+.top-bar-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: inherit;
+  font-weight: 500; // Helvetica Neue only
+  text-align: center;
+}
+
+.top-bar-link {
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+
+  &:before {
+    left: 0;
+    font-size: 26px;
+    color: $linkColor;
+    @extend %icon-before;
+  }
+
+  &.disabled, &.disabled:before { color: lighten($linkColor, 30%); }
+
+  &.icon-only {
+    padding: 0;
+    width: 44px;
+    height: 100%;
+    @extend %hide-text;
+
+    &:before { right: 0; }
+  }
+
+  &.icon-menu:before { content: $iconMenuCircle; }
+  &.icon-group:before { content: $iconGroup; }
+  &.icon-plus:before { content: $iconPlusCircle; }
+
+  &.icon-up, &.icon-down {
+    width: 34px;
+    margin-right: 6px;
+  }
+
+  &.icon-up + .icon-down { margin-right: 0; }
+
+  &.icon-up:before {
+    content: $iconUp;
+    font-size: 32px;
+  }
+
+  &.icon-down:before {
+    content: $iconDown;
+    font-size: 32px;
+  }
+
+  &.icon-back {
+    padding-left: 27px;
+
+    &:before {
+      content: $iconBack;
+      margin: -22px 0 0 -8px;
+      font-size: 43px;
+    }
+  }
+
+  &.icon-next {
+    padding-right: 27px;
+
+    &:before {
+      content: $iconNext;
+      left: auto;
+      right: 0;
+      margin: -22px -6px 0 0;
+      font-size: 43px;
+    }
+  }
+}

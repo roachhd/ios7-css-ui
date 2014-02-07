@@ -1,0 +1,33 @@
+.form-row.valid, .form-row.invalid {
+  &:after {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    font-size: 24px;
+    @extend %icon;
+  }
+
+  > input, > select { padding-right: 42px; }
+
+  > .form-hint {
+    font-weight: 500; // Helvetica Neue only
+  }
+}
+
+.form-row.valid {
+  &:after {
+    content: $iconValid;
+    color: $green;
+  }
+
+  > .form-hint { color: $validColor; }
+}
+
+.form-row.invalid {
+  &:after {
+    content: $iconInvalid;
+    color: $red;
+  }
+
+  > .form-hint { color: $invalidColor; }
+}

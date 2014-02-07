@@ -1,0 +1,30 @@
+.form-submit {
+  padding: 12px;
+  overflow: hidden;
+  background: $rowBackground;
+  box-shadow: 0 -1px rgba(black, .08),
+              0 1px rgba(black, .07),
+              0 1px 1px rgba(black, .05);
+
+  /* Two buttons setup. */
+  > .button {
+    float: left;
+    width: 40%;
+    width: -webkit-calc(50% - 6px);
+    width: calc(50% - 6px);
+
+    + .button { float: right; }
+  }
+
+  /* Single button */
+  > .button:only-child {
+    float: none;
+    width: 100%;
+  }
+
+  fieldset > & {
+    margin-left: -12px;
+    border-top: 1px solid $rowBorder;
+    box-shadow: none;
+  }
+}
