@@ -13,7 +13,7 @@ sass --update scss:css
 If you have any questions, feel free to email me at:
 katie@roachhd.com
 
-Happy coding!
+Happy coding! 
 KB
 
 DEMO: http://test.roachhaus.com/test/2013/ios7-css-ui/
