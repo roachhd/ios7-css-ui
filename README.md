@@ -3,9 +3,6 @@ ios7-css-ui
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-[![Codeship Status for roachhd/ios7-css-ui](https://www.codeship.io/projects/b252c8e0-400a-0132-092d-665ce443e05d/status)](https://www.codeship.io/projects/43736)
-
-
 To compile with Sass, run the following command:
 sass --update scss:css
 
